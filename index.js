@@ -1,6 +1,8 @@
 const express = require('express');
+const cors = require('cors')
 
 const app = express();
+app.use(cors())
 
 const charecters = [
     {id: 0, name : 'Alex', Marriage: true, topGifts: ['Complete Breakfast', 'Salmon Dinner', 'Pearl'], Address: '1 River Road', Birthday: 'Summer: 13'},
