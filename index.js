@@ -6,7 +6,7 @@ app.use(cors())
 
 const charecters = [
     {id: 0, name : 'Alex', Marriage: true, topGifts: ['Complete Breakfast', 'Salmon Dinner', 'Pearl'], Address: '1 River Road', Birthday: 'Summer: 13'},
-    {id: '1', name : 'Elliot', Marriage: true, topGifts: ['Lobster', 'Duck Feather', 'Squid Ink'], Address: 'Elliot\'s Cabin', Birthday: 'Fall: 5'},
+    {id: 1, name : 'Elliot', Marriage: true, topGifts: ['Lobster', 'Duck Feather', 'Squid Ink'], Address: 'Elliot\'s Cabin', Birthday: 'Fall: 5'},
     {id: 2, name : 'Harvey', Marriage: true, topGifts: ['Coffee', 'Truffle Oil', 'Wine'], Address: 'Medical Clinic', Birthday: 'Winter: 14'},
     {id: 3, name : 'Sam', Marriage: true, topGifts: ['Cactus Fruit', 'Maple Bar', 'Pizza'], Address: '1 Willow Lane', Birthday: 'Summer: 17'},
     {id: 4, name : 'Sebastian', Marriage: true, topGifts: ['Frozen Tear', 'Sashimi', 'Obsidian'], Address: '24 Mountain Road', Birthday: 'Winter: 10'},
@@ -50,6 +50,16 @@ const charecters = [
     {id: 42, name : 'Mr. Qi', Marriage: false, Address: 'Casino or Walnut Room',},
     {id: 43, name : 'Proffessor Snail', Marriage: false, Address: 'Island Field Office',},
 ]
+
+app.get('/', (req, res) => {
+    return res.json('Please enter a specified path');
+})
+
+app.get('/charecter/random', (req, res) =>{
+    let i = Math.floor(Math.random() * 44);
+    const charecter = charecters[i];
+    return res.json(charecter);
+})
 
 app.get('/charecter/all', (req, res) =>{
     return res.json(charecters);
