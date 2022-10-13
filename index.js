@@ -41,7 +41,7 @@ const charecters = [
     {id: 35, name : 'Bouncer', Marriage: false, Address: 'Oasis'},
     {id: 36, name : 'Gil', Marriage: false, Address: 'The Adventures Guild',},
     {id: 37, name : 'Governor', Marriage: false},
-    {id: 38, name : 'Gunther', Marriage: false, Address: 'Museum',},
+    {id: 38, name : 'Gunther', Marriage: false, Address: 'Museum'},
     {id: 39, name : 'Henchman', Marriage: false, topGifts: 'Void Mayonnaise', Address: 'Witches Swamp'},
     {id: 40, name : 'Morris', Marriage: false, Address: 'JojaMart'},
     {id: 41, name : 'Marlon', Marriage: false, Address: 'The Adventures Guild',},
