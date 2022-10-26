@@ -4,7 +4,7 @@ const cors = require('cors')
 const app = express();
 app.use(cors())
 
-const charecters = [
+const characters = [
     {id: 0, name : 'Alex', marriage: true, topGifts: ['Complete Breakfast', 'Salmon Dinner', 'Pearl'], address: '1 River Road', birthday: 'Summer: 13'},
     {id: 1, name : 'Elliot', marriage: true, topGifts: ['Lobster', 'Duck Feather', 'Squid Ink'], address: 'Elliot\'s Cabin', birthday: 'Fall: 5'},
     {id: 2, name : 'Harvey', marriage: true, topGifts: ['Coffee', 'Truffle Oil', 'Wine'], address: 'Medical Clinic', birthday: 'Winter: 14'},
@@ -55,33 +55,33 @@ app.get('/', (req, res) => {
     return res.json('Please enter a specified path');
 })
 
-app.get('/charecters/random', (req, res) =>{
+app.get('/characters/random', (req, res) =>{
     let i = Math.floor(Math.random() * 44);
     return res.json(charecters[i - 1]);
 })
 
-app.get('/charecters/spouses', (req, res) =>{
+app.get('/characters/spouses', (req, res) =>{
     const candidates = charecters.filter(charecter => charecter.marriage)
     return res.json(candidates)
 })
 
-app.get('/charecters/random/spouse', (req, res) =>{
+app.get('/characters/random/spouse', (req, res) =>{
     let i = Math.floor(Math.random() * 12)
     const candidates = charecters.filter(charecter => charecter.marriage)
     return res.json(candidates[i - 1])
 })
 
-app.get('/charecters/all', (req, res) =>{
+app.get('/characters/all', (req, res) =>{
     return res.json(charecters);
 })
 
-app.get('/charecters/:name', (req, res) =>{
+app.get('/characters/:name', (req, res) =>{
     const {name} = req.params;
     const charecter = charecters.find(charecter => charecter.name.toLowerCase() === name.toLowerCase());
     return res.json(charecter);
 })
 
-app.get('/charecters/:name/gifts', (req, res) =>{
+app.get('/characters/:name/gifts', (req, res) =>{
     const {name} = req.params;
     const charecter = charecters.find(charecter => charecter.name.toLowerCase() === name.toLowerCase());
     return res.json(charecter.topGifts)
